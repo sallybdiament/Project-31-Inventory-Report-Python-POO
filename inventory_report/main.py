@@ -1,5 +1,6 @@
 def main():
     pass
 
-def starting_projecto ():
+
+def starting_projecto():
     pass
