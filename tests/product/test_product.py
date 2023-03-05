@@ -1,5 +1,6 @@
-# from inventory_report.inventory.product import Product
+from inventory_report.inventory.product import Product
 
 
 def test_cria_produto():
-    pass  # Seu teste deve ser escrito aqui
+    result = Product('a', 'a', '12/2/22', '12/2/22', 5, 'a')
+    assert result is None
