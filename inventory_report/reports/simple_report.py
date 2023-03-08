@@ -1,4 +1,4 @@
-class SimpleProduct:
+class SimpleReport:
 
     @staticmethod
     def generate(cls, lista):
