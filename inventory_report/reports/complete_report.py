@@ -3,7 +3,7 @@ from inventory_report.reports.simple_report import SimpleReport
 
 class CompleteReport(SimpleReport):
     @staticmethod
-    def generate(cls, lista):
+    def generate(lista):
         company_name_dict = {}
         list_qty = ""
 
@@ -14,10 +14,10 @@ class CompleteReport(SimpleReport):
                 company_name_dict[item['nome_da_empresa']] = 1
 
         for key, value in company_name_dict.items():
-            list_qty += f"- {key}: {value}"
+            list_qty += f"- {key}: {value}\n"
 
         return (
             f"{SimpleReport.generate(lista)}"
-            f"Produtos estocados por empresa:\n"
-            f"{list_qty}\n"
+            f"\nProdutos estocados por empresa:\n"
+            f"{list_qty}"
         )
