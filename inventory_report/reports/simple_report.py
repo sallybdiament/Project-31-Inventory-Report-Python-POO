@@ -1,25 +1,25 @@
-class SimpleReport:
-    def __init__(
-        self,
-        id,
-        nome_do_produto,
-        nome_da_empresa,
-        data_de_fabricacao,
-        data_de_validade,
-        numero_de_serie,
-        instrucoes_de_armazenamento,
-    ):
-        self.id = id
-        self.nome_do_produto = nome_do_produto
-        self.nome_da_empresa = nome_da_empresa
-        self.data_de_fabricacao = str(data_de_fabricacao)
-        self.data_de_validade = str(data_de_validade)
-        self.numero_de_serie = numero_de_serie
-        self.instrucoes_de_armazenamento = instrucoes_de_armazenamento
+class SimpleProduct:
 
-    def __repr__(self):
+    @staticmethod
+    def generate(cls, lista):
+        company_name_dict = {}
+        fabr_date = []
+        valid_date = []
+
+        for item in lista:
+            if item['nome_da_empresa'] in company_name_dict:
+                company_name_dict[item['nome_da_empresa']] += 1
+            else:
+                company_name_dict[item['nome_da_empresa']] = 1
+            fabr_date.append(item['data_de_fabricacao'])
+            valid_date.append(item['data_de_fabricacao'])
+
+        max_company = max(company_name_dict, key=company_name_dict.get)
+        oldest_fabr_date = min(fabr_date)
+        max_valid_date = max(valid_date)
+
         return (
-            f"Data de fabricação mais antiga: {self.data_de_fabricacao}"
-            f"Data de validade mais próxima: {self.data_de_validade}"
-            f"Empresa com mais produtos: {self.nome_da_empresa}."
+            f"Data de fabricação mais antiga: {oldest_fabr_date}\n"
+            f"Data de validade mais próxima: {max_valid_date}\n"
+            f"Empresa com mais produtos: {max_company}.\n"
         )
