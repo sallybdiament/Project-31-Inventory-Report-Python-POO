@@ -31,14 +31,6 @@ class Inventory:
             with open(path) as file:
                 list_file = json.load(file)
         else:
-            # with open(path) as file:
-            #     readXML = ET.parse(file)
-            #     iterableResult = readXML.getroot()
-            #     for item in iterableResult:
-            #         row = {}
-            #         for line in item:
-            #             row[line.tag] = line.text
-            #         list_file.append(row)
             list_file = Inventory.read_xml_file(path)
         return list_file
 
