@@ -1,6 +1,8 @@
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 import csv
+import json
+import xml.etree.ElementTree as ET
 
 
 class Inventory:
@@ -9,9 +11,21 @@ class Inventory:
         list_file = []
         if path.endswith(".csv"):
             with open(path) as file:
-                reader = csv.DictReader(file)
-                for item in reader:
+                readerCSV = csv.DictReader(file)
+                for item in readerCSV:
                     list_file.append(item)
+        elif path.endswith(".xml"):
+            with open(path) as file:
+                readXML = ET.parse(file)
+                iterableResult = readXML.getroot()
+                for item in iterableResult:
+                    row = {}
+                    for line in item:
+                        row[line.tag] = line.text
+                    list_file.append(row)
+        else:
+            with open(path) as file:
+                list_file = json.load(file)
         if relatoryType == 'completo':
             return CompleteReport.generate(list_file)
         else:
