@@ -1,32 +1,23 @@
 # Inventory Report POO - Computer Science Project
 
 Projeto em **Python** com framework **Flask** para treinar conceitos de POO!
-
-Habilidades trabalhadas:
-- Utilizar o terminal interativo do Python.
-- Utilizar estruturas condicionais e de repetição.
-- Utilizar funções built-in do Python.
-- Utilizar tratamento de exceções.
-- Realizar a manipulação de arquivos.
-- Escrever funções.
-- Escrever testes com Pytest.
-- Escrever seus próprios módulos e importá-los em outros códigos.
+Leitura e extração de dados de arquivos ```.csv```, ```.json``` e ```.xml``` utilizando programação orientada à objetos e aplicando padrões de projetos.
 
 Projeto 31 da [Trybe](https://wwww.betrybe.com), módulo de Ciência da Computação.
 
 ## O Projeto
 
-* Implementar função para: abrir, ler e transformar os dados como lista de dicionários, a partir do caminho do arquivo.
-* Implementar funções para extração de informações do relatório como: tipos de emprego, tipos de indústria, maior salário e menos salário.
-* Implementar funções para filtrar dados: por tipo de emprego, por indústria, por faixa salarial.
-* Implementar funções de testes com **Pytest**.
+* Implementar uma classe com habilidades de lógica de programação que retorne um relatório simples a partir dos dados recebidos.
+* Implementar uma classe herdeira que retorne um relatório completo a partir do relatório simples.
+* Implementar classes separadas para leitura dos arquivos ```.csv```, ```.json``` e ```.xml```.
+* Refatorar com o padrão de projeto Strategy: criar uma classe abstrata "Importer" para ser a interface da estratégia que terá três classes de estratégias herdeiras ("CsvImporter", "JsonImporter" e "XmlImporter").
 
 ## Instalação 
 
 
 #### 1- Clonar o repositório
 
-```git clone git@github.com:sallybdiament/Project-30-Job-Insights-Python.git```
+```git clone git@github.com:sallybdiament/Project-31-Inventory-Report-Python.git```
 
 #### 2 - Crie o ambiente virtual para o projeto
 
@@ -35,10 +26,6 @@ python3 -m venv .venv && source .venv/bin/activate
 #### 3 - Instalar as dependências
 
 python3 -m pip install -r dev-requirements.txt
-
-#### 3 - Para executar as funções:
-
-Abrir o terminal e rodar a função desejada: ```python3 -i src/insights/jobs.py```
 
 #### 4 - Executar os testes:
 
@@ -51,11 +38,8 @@ ou para executar um teste específico:
 ## Tecnologias
 - Python
 - Pytest (unittest.mock, fixture, etc)
-- Flask
 - Flake8 e Black
 - Exceptions (try, except, elsse, finally)
-- Data types (int, str, list, dict, tuples, set, etc)
-- Conditionals (if, elif, else)
-- Loops (for, list comprehension, while, enumerate)
-- Functions in Python
+- POO in Python
+- Desgin Patterns in Python
 - Manipulation of CSV, JSON and XML data (with, open, json, csv, DictReader, etc)
